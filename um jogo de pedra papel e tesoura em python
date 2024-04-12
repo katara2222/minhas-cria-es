@@ -1,0 +1,52 @@
+import random
+print('=='* 20)
+começa = input("""você quer jogar pedra, papel ou tesoura com o computador? 
+sim ou não:""").lower()
+print('=='*20)
+if começa == 'sim': 
+    itens = ('Pedra', 'Papel', 'Tesoura')
+    escolhac =random.randint(0, 2)
+    print(""" escolha uma das opções abaixo:
+          [0] pedra
+          
+          [1] papel
+
+          [2]tesoura
+          """)
+    escolhah = int(input("qual é sua escolha?"))
+    print('=='*30)
+    print("o computador jogou {}".format(itens[escolhac]))
+    print('=='*30)
+    print("você jogou {}".format(itens[escolhah]))
+    print('=='*30)
+    if escolhah == 2:
+        if escolhac == 1:
+            print("você \033[32mganhou\033[m")
+        elif escolhac == 2:
+            print("você empatou")
+        elif escolhac == 0:
+            print("você \033[31mperdeu\033[m")
+        else:
+            print("jogadaa invalida")
+    if escolhah == 1:
+        if escolhac == 1:
+            print("vocês empataram")
+        elif escolhac == 2:
+            print("você \033[31mperdeu\033[m")
+        elif escolhac == 0:
+            print("você \033[32mganhou\033[m")
+        else:
+            print("jogada invalida, recomece")
+    if  escolhah == 0:
+        if escolhac == 1:
+            print("você \033[31mperdeu\033[m")
+        elif escolhac == 2:
+            print("você \033[32mganhou\033[m")
+        elif escolhac == 0:
+            print("vocês empataram")
+        else:
+            print("jogada invalida, recomece")
+elif começa == 'não':
+    print("bem então,talvez na proxima vez")
+else:
+    print("opção invalida")
