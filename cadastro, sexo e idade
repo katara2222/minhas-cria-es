@@ -1,0 +1,39 @@
+print("="*30)
+print("CADAsTRO NO BANCO")
+print("="*30)
+print("Para o cadastro digite as seguintes informações")
+idadeC = sexoh = sexof = 0
+sexo = ''
+while True:
+    idade = int(input("qual é a idade: "))
+    sexo = " "
+    while sexo not in "MmFf":
+        sexo = str(input("qual é o sexo: [M/F] ")).strip().upper()[0]
+    continua = str(input("você quer continua?[S/N] ")).strip().upper()[0]
+    if idade > 18:
+        idadeC +=1
+    if sexo in "M":
+        sexoh += 1
+    if sexo in "F":
+        if idade < 20:
+            sexof += 1
+    if continua in "N":
+        print("="*30)
+        print("ok, me chame novamente se precisa de mim")
+        break
+print("-"*30)
+if idadeC > 1:
+    print(f"foram {idadeC} pessoas com mais de 18 anos cadastrada")
+else:
+    print(f"apenas {idadeC} pessoa com mais de 18 anos foi cadastrada")
+print("-"*30)
+if sexoh > 1:
+    print(f"foram {sexoh} homens cadastrados")
+else:
+    print(f"foi apenas {sexoh} homem que se cadastrou")
+print("-"*30)
+if sexof > 1:
+    print(f"foram {sexof} mulheres com menos de 20 anos ")
+else:
+    print(f"foi apenas {sexof} mulher que se cadastrou com menos de 20 anos")
+print("="*30)
