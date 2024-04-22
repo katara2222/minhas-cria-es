@@ -1,0 +1,28 @@
+import random
+print("="*30)
+print("JOGUE PAR OU IMPAR COMIGO, O SEU COMPUTADOR")
+v = 0
+while True:
+    print("="*30)
+    num = int(input('digite um numero: '))
+    numc = random.randint(1, 16)
+    escolha = str(input("escolhe par ou impar [P/I]: "))
+    soma = num + numc
+    print("="*30)
+    print(f"você tacou {num} e o adversario tacou {numc}, a soma desses números é {soma}")
+    if escolha in 'Pp':
+        if soma % 2 == 0:
+            print("você ganhou")
+            v += 1
+        if soma % 2 == 1:
+            print("você perdeu")
+            break
+    if escolha in "Ii":
+        if soma % 2 == 0:
+            print("você perdeu")
+            break
+        if soma % 2 == 1:
+            print("você ganhou")
+            v += 1
+print("="*30)
+print(f"você venceu {v} vezes o seu adversario")
